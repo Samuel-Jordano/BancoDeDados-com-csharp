@@ -34,7 +34,7 @@ public partial class Form1 : Form
         FormCadastro formCadastro = new FormCadastro();
         if (formCadastro.ShowDialog() == DialogResult.OK)
         {
-            LoadData(); // Recarrega os dados após adicionar
+            LoadData();
         }
     }
 
@@ -49,7 +49,7 @@ public partial class Form1 : Form
             FormCadastro formCadastro = new FormCadastro(id, nome, preco);
             if (formCadastro.ShowDialog() == DialogResult.OK)
             {
-                LoadData(); // Recarrega os dados após atualizar
+                LoadData(); 
             }
         }
         else
@@ -69,7 +69,7 @@ public partial class Form1 : Form
             cmd.Parameters.AddWithValue("@id", id);
             cmd.ExecuteNonQuery();
             db.CloseConnection();
-            LoadData(); // Recarrega os dados após excluir
+            LoadData(); 
         }
         else
         {
